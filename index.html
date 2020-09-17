@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/645fcab559.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         
         <style type="text/css">
         	.full-width{
@@ -65,6 +66,26 @@
 
         		history.value += "\n"+x+" = "+y;
         	}
+
+
+            var el_up = document.getElementById("GFG_UP"); 
+            var el_down = document.getElementById("GFG_DOWN"); 
+            
+            el_up.innerHTML = "Click on the button to set" 
+                    + "the scroll bar to bottom"; 
+            
+            function gfg_Run() { 
+                var text = document.getElementById('history'); 
+                text.scrollTop = text.scrollHeight; 
+                el_down.innerHTML = "Scroll bar is moved to bottom."; 
+            }
+
+            function runtwofunction() {
+                solve();
+                gfg_Run();
+                
+            }
+
         </script>
 
 
@@ -187,7 +208,8 @@
             height:60px;
             margin-left:35px; */
             display:block;
-            background-color:whitesmoke;
+            /* background-color:whitesmoke; */
+            background-color:#f1f3f4;
             color: black;
             border: none;
             outline:none;
@@ -241,7 +263,7 @@
                             <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col mx-3 ">
-                                            <input type="text" class="full-width round py-4 px-3" id="expression">
+                                            <input type="text" class="full-width btn-color-light round py-4 px-3" id="expression">
                                         </div>
                                     </div>
 
@@ -437,7 +459,7 @@
                                                 </div>
                                                 <div class="row pt-1">
                                                     <div class="col">
-                                                        <input type="button" value="=" class="full-width round py-3 btn-color-blue onhoverlightblue" onclick="solve()"/>
+                                                        <input type="button" value="=" class="full-width round py-3 btn-color-blue onhoverlightblue" onclick="runtwofunction()"/>
                                                     </div>
                                                 </div>
                                                 
@@ -486,6 +508,8 @@
 
     <script type="text/javascript">
     </script>
+
+     
 
     
 </body>
