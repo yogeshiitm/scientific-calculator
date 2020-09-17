@@ -39,33 +39,73 @@
         </style>
         
         <script type="text/javascript">
-        	function dis(val){
+        	function dis2(val){
         		document.getElementById("expression").value += val;
-                
         	}
+
+            
+            var expression2='';
+            function dis3(val){
+                expression2 += val;
+            }
+
 
         	function clr(){
         		document.getElementById("expression").value = "";
+                expression2 = "";
+
         	}
 
             function clrhistory(){
         		document.getElementById("history").value = "";
+                document.getElementById("expression").value = "";
+                expression2 = "";
+
         	}
 
             function back() {
                 var value = document.getElementById("expression").value;
                 document.getElementById("expression").value = value.substr(0, value.length - 1);
+
+                expression2 = expression2.substr(0, expression2.length - 1);
+
             }
 
+            var temp=''
         	function solve(){
-        		var x = document.getElementById("expression").value
-        		var y = eval(x);
+        		// var x = document.getElementById("expression2").value
+                var x = document.getElementById("expression").value
+        		var y = eval(expression2);
+                temp=y;
         		clr();
 
         		var history = document.getElementById("history");
-
         		history.value += "\n"+x+" = "+y;
         	}
+
+            function dis(val){
+                dis2(val);
+                dis3(val);
+            }
+
+            function multiply(){
+                dis2('\u00D7');
+                dis3('*');
+            }
+
+            function answer(){
+
+                // var expression = document.getElementById("expression");
+        		// expression.value += temp;
+
+                var value = document.getElementById("expression").value;
+                document.getElementById("expression").value += temp;
+
+
+            }
+
+
+
 
 
             var el_up = document.getElementById("GFG_UP"); 
@@ -272,7 +312,7 @@
                             <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col mx-3 ">
-                                            <input type="text" class="full-width round2 py-2 px-4 dDoNo" style="text-align: right" id="expression">
+                                            <input type="text" class="full-width round2 py-2 px-4 dDoNo" style="text-align: right" id="expression" >
                                         </div>
                                     </div>
 
@@ -355,7 +395,7 @@
                                             <div class="col-md pl-3" id="content-desktop">
                                                 <div class="row pt-2">
                                                     <div class="col">
-                                                        <input type="button" value="" class="full-width round btn-color onhoverdark" onclick="dis('')"/>
+                                                        <input type="button" value="Ans" class="full-width round btn-color onhoverdark" onclick="answer()"/>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-1">
@@ -492,7 +532,7 @@
                                                 </div>
                                                 <div class="row pt-1">
                                                     <div class="col">
-                                                        <input type="button" value="×" class="full-width round btn-color onhoverdark mF5fo" onclick="dis('*')"/>
+                                                        <input type="button" value="×" class="full-width round btn-color onhoverdark mF5fo" onclick="multiply()"/>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-1">
