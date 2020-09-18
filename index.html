@@ -83,14 +83,21 @@
         		// var x = document.getElementById("expression2").value
                 var x = document.getElementById("expression").value
         		var y = eval(expression2);
-                temp=y;
+                // temp=y;
 
         		// clr();
-                document.getElementById("expression").value = y;
-                expression2 = String(y);
+                
+                // The toFixed() method converts a number into a string, rounding to a specified number of decimals.
+                z = y.toFixed(10);
+                w = parseFloat(z);
+                temp=w;
+                expression2 = String(w);
+                document.getElementById("expression").value = expression2;
 
         		var history = document.getElementById("history");
-        		history.value += "\n"+x+" = "+y;
+        		// history.value += "\n"+x+" = "+y;
+                history.value += "\n"+x+" = "+expression2;
+
         	}
 
             function dis(val){
@@ -110,7 +117,6 @@
                 // var value = document.getElementById("expression").value;
                 document.getElementById("expression").value += temp;
                 expression2 += temp;
-
 
             }
 
