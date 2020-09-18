@@ -40,13 +40,17 @@
         
         <script type="text/javascript">
         	function dis2(val){
-        		document.getElementById("expression").value += val;
+                // document.getElementById("expression").value += val;
+                var m = document.getElementById("expression")
+                m.value += val;
         	}
 
             
             var expression2='';
+            
             function dis3(val){
                 expression2 += val;
+                
             }
 
 
@@ -64,8 +68,11 @@
         	}
 
             function back() {
-                var value = document.getElementById("expression").value;
-                document.getElementById("expression").value = value.substr(0, value.length - 1);
+                var v = document.getElementById("expression").value;
+                document.getElementById("expression").value = v.substr(0, v.length - 1);
+                
+                // var v = document.getElementById("expression");
+                // v.value = v.substr(0, v.length - 1);
 
                 expression2 = expression2.substr(0, expression2.length - 1);
 
@@ -77,7 +84,10 @@
                 var x = document.getElementById("expression").value
         		var y = eval(expression2);
                 temp=y;
-        		clr();
+
+        		// clr();
+                document.getElementById("expression").value = y;
+                expression2 = String(y);
 
         		var history = document.getElementById("history");
         		history.value += "\n"+x+" = "+y;
@@ -94,17 +104,15 @@
             }
 
             function answer(){
+                // var p = document.getElementById("expression");
+        		// p.value += temp;
 
-                // var expression = document.getElementById("expression");
-        		// expression.value += temp;
-
-                var value = document.getElementById("expression").value;
+                // var value = document.getElementById("expression").value;
                 document.getElementById("expression").value += temp;
+                expression2 += temp;
 
 
             }
-
-
 
 
 
@@ -312,7 +320,7 @@
                             <div class="col-lg-12">
                                     <div class="row">
                                         <div class="col mx-3 ">
-                                            <input type="text" class="full-width round2 py-2 px-4 dDoNo" style="text-align: right" id="expression" >
+                                            <input type="text" readonly class="full-width round2 py-2 px-4 dDoNo" style="text-align: right" id="expression" >
                                         </div>
                                     </div>
 
@@ -487,7 +495,7 @@
                                                 </div> -->
                                                 <div class="row pt-2">
                                                     <div class="col">
-                                                        <input type="button" value="C" class="full-width round btn-color onhoverdark A2W7l" onclick="clrhistory()"/>
+                                                        <input type="button" value="AC" class="full-width round btn-color onhoverdark A2W7l" onclick="clrhistory()"/>
                                                     </div>
                                                 </div>
                                                 <div class="row pt-1">
