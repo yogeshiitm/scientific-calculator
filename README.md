@@ -1,7 +1,8 @@
 # [Scientific calculator](https://yogeshiitm.github.io/scientific-calculator/)
 This is an online javascript scientific calculator, designed and coded by [Yogesh Agarwala](http://yogeshiitm.github.io/).\
 **View it here: https://yogeshiitm.github.io/scientific-calculator/**
-![Scientific calculator](images/calculator.png)
+<!-- ![Scientific calculator](images/calculator.png) --> 
+<a href="https://yogeshiitm.github.io/scientific-calculator/"><img src="images/calculator.png"></a>
 
 ## Some Features
 1. The input of this calculator can be a multiple function expression, just like a physical scientific calculator.  
