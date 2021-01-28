@@ -19,5 +19,12 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
     3!5 ---> 3! × 5
     ```
     
+
+## Near future plan
+1. Input through keyboard: currently the calculator only supports click on the button through mouse (in desktop)
+2. Switching between degree and radian: currently by default angle has to be entered in degree.
+3. Inverse trigonometric functions are yet to be added.
+
+    
 **Note:** 
 If you think there is a mistake in the calculation done by the app or find any other bug, please do [let me know](https://yogeshiitm.github.io/about).
