@@ -1,8 +1,23 @@
-// written by yogesh agarwala https://yogeshiitm.github.io
+// Code written by yogesh agarwala https://yogeshiitm.github.io
+
 
 var expression2 = "";
 
-function dis2(val) {
+function display1(val) {
+    var x = document.getElementById("expression1").value;
+    var n = x.length - 1;
+    if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%") && (val == 0 || val == 1 || val == 2 || val == 3 || val == 4 || val == 5 || val == 6 || val == 7 || val == 8 || val == 9))) {
+        multiply();
+    }
+    if (check == 1 && val == ")") {
+        clr();
+    }
+    else {
+        display2(val);
+        display3(val);
+    }
+}
+function display2(val) {
     if (check == 1) {
         if (val == '0' || val == '1' || val == '2' || val == '3' || val == '4' || val == '5' || val == '6' || val == '7' || val == '8' || val == '9' || val == "(" || val == ")" || val == "sin(" || val == "cos(" || val == "tan(" || val == "log(" || val == "ln(" || val == "π" || val == "e" || val == "√(" || val == "abs(") {
             clr();
@@ -14,11 +29,11 @@ function dis2(val) {
             check = 0;
         }
     }
-    var m = document.getElementById("expression");
+    var m = document.getElementById("expression1");
     m.value += val;
     scroll_right();
 }
-function dis3(val) {
+function display3(val) {
     if (check == 1) {
         if (val == '0' || val == '1' || val == '2' || val == '3' || val == '4' || val == '5' || val == '6' || val == '7' || val == '8' || val == '9' || val == "(" || val == ")" || val == "sss(" || val == "ccc(" || val == "ttt(" || val == "lll(" || val == "jj(" || val == Math.PI || val == Math.E || val == "√(" || val == "aaa(") {
             clr();
@@ -33,23 +48,10 @@ function dis3(val) {
     expression2 += val;
     scroll_right();
 }
-function clr() {
-    document.getElementById("expression").value = "";
-    expression2 = "";
-    check = 0;
-}
-function allclr() {
-    document.getElementById("history").value = "";
-    document.getElementById("expression").value = "";
-    expression2 = "";
-    check = 0;
-}
-var temp = '';
-var check = 0; //added so that if to check if the back button is pressed after the solve button 
-//bcz if solve is pressed after back then the entire expression2 should get deleted
+
 function solve() {
     check = 1;
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var o = expression2.indexOf('!');
     if (o > -1) {
         for (var k = 0; k < expression2.length; k++) {
@@ -62,7 +64,7 @@ function solve() {
                     if (expression2[i] == ".") {
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + 'Error' + "\n" + "Factorial function is defined for non-negative integers.";
-                        document.getElementById("expression").value = "Error";
+                        document.getElementById("expression1").value = "Error";
                         expression2 = "Error";
                         gfg_Run();
                     }
@@ -75,7 +77,7 @@ function solve() {
                     if ((ans == 1 && n != 0 && n != 1)) {
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + 'Error' + "\n" + "Factorial function is defined for non-negative integers.";
-                        document.getElementById("expression").value = "Error";
+                        document.getElementById("expression1").value = "Error";
                         expression2 = "Error";
                         gfg_Run();
                     }
@@ -88,7 +90,7 @@ function solve() {
                     if (expression2[i] == ".") {
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + 'Error' + "\n" + "Factorial function is defined for non-negative integers.";
-                        document.getElementById("expression").value = "Error";
+                        document.getElementById("expression1").value = "Error";
                         expression2 = "Error";
                         gfg_Run();
                     }
@@ -101,7 +103,7 @@ function solve() {
                     if ((ans == 1 && n != 0 && n != 1)) {
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + 'Error' + "\n" + "Factorial function is defined for non-negative integers.";
-                        document.getElementById("expression").value = "Error";
+                        document.getElementById("expression1").value = "Error";
                         expression2 = "Error";
                         gfg_Run();
                     }
@@ -218,7 +220,7 @@ function solve() {
                     var n = eval(expression2.substring(k + 4, i));
                     if (n % 90 == 0 && n % 180 != 0) {
                         expression2 = Infinity;
-                        document.getElementById("expression").value = Infinity;
+                        document.getElementById("expression1").value = Infinity;
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + expression2;
                         gfg_Run();
@@ -237,7 +239,7 @@ function solve() {
                     var n = eval(expression2.substring(k + 3, i));
                     if (n % 90 == 0 && n % 180 != 0) {
                         expression2 = Infinity;
-                        document.getElementById("expression").value = Infinity;
+                        document.getElementById("expression1").value = Infinity;
                         var history = document.getElementById("history");
                         history.value += "\n" + x + " = " + expression2;
                         gfg_Run();
@@ -330,7 +332,7 @@ function solve() {
 
                 }
                 else {
-                    document.getElementById("expression").value = "Error";
+                    document.getElementById("expression1").value = "Error";
                     expression2 = "Error";
                     var history = document.getElementById("history");
                     history.value += "\n" + x + " = " + expression2 + "\n" + "Please add parenthesis after abs";
@@ -344,7 +346,7 @@ function solve() {
         expression2 = "Error";
         var history = document.getElementById("history");
         history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
-        document.getElementById("expression").value = "Error";
+        document.getElementById("expression1").value = "Error";
         gfg_Run();
     }
 
@@ -352,7 +354,7 @@ function solve() {
         try {
             var y = eval(expression2);
         } catch (err) {
-            document.getElementById("expression").value = "Error";
+            document.getElementById("expression1").value = "Error";
             expression2 = "Error";
             var history = document.getElementById("history");
             history.value += "\n" + x + " = " + expression2;
@@ -363,7 +365,7 @@ function solve() {
         var w = parseFloat(z);
         temp = w;
         expression2 = String(w);
-        document.getElementById("expression").value = expression2;
+        document.getElementById("expression1").value = expression2;
 
         if (expression2 != "Error") {
             var history = document.getElementById("history");
@@ -372,8 +374,11 @@ function solve() {
         }
     }
 }
+var temp = '';
+var check = 0; //added to check if the back button is pressed after the solve button
+//bcz if solve is pressed after back then the entire expression2 should get deleted
 function back() {
-    var v = document.getElementById("expression").value;
+    var v = document.getElementById("expression1").value;
     var m = expression2[expression2.length - 2];
     var n = expression2[expression2.length - 1];
     var p = v[v.length - 2];
@@ -385,34 +390,45 @@ function back() {
     else if (m == '*' || n == '*') {
         if (n != '*' && m == '*' && p != '\u00D7' && p != '^') {
             expression2 = expression2.substring(0, expression2.length - 3);
-            document.getElementById("expression").value = v.substring(0, v.length - 1);
+            document.getElementById("expression1").value = v.substring(0, v.length - 1);
         }
         else if (n != '*' && m == '*' && (p != '\u00D7' || p != '^')) {
             expression2 = expression2.substring(0, expression2.length - 1);
-            document.getElementById("expression").value = v.substring(0, v.length - 1);
+            document.getElementById("expression1").value = v.substring(0, v.length - 1);
         }
         else if (n == '*' && m == '*' && q == '^') {
             expression2 = expression2.substring(0, expression2.length - 2);
-            document.getElementById("expression").value = v.substring(0, v.length - 1);
+            document.getElementById("expression1").value = v.substring(0, v.length - 1);
         }
         else if (n == '*' && m == '*' && q == '\u00D7') {
             expression2 = expression2.substring(0, expression2.length - 1);
-            document.getElementById("expression").value = v.substring(0, v.length - 1);
+            document.getElementById("expression1").value = v.substring(0, v.length - 1);
         }
         else if (n == '*' && m != '*' && q == '\u00D7') {
             expression2 = expression2.substring(0, expression2.length - 1);
-            document.getElementById("expression").value = v.substring(0, v.length - 1);
+            document.getElementById("expression1").value = v.substring(0, v.length - 1);
         }
     }
     else if (q == "π" || q == "e") {
         expression2 = expression2.substring(0, expression2.length - 17);
-        document.getElementById("expression").value = v.substring(0, v.length - 1);
+        document.getElementById("expression1").value = v.substring(0, v.length - 1);
     }
 
     else {
         expression2 = expression2.substring(0, expression2.length - 1);
-        document.getElementById("expression").value = v.substring(0, v.length - 1);
+        document.getElementById("expression1").value = v.substring(0, v.length - 1);
     }
+    check = 0;
+}
+function clr() {
+    document.getElementById("expression1").value = "";
+    expression2 = "";
+    check = 0;
+}
+function allclr() {
+    document.getElementById("history").value = "";
+    document.getElementById("expression1").value = "";
+    expression2 = "";
     check = 0;
 }
 function gfg_Run() {
@@ -420,7 +436,7 @@ function gfg_Run() {
     text.scrollTop = text.scrollHeight;
 }
 function scroll_right() {
-    var text = document.getElementById('expression');
+    var text = document.getElementById("expression1");
     text.scrollLeft = text.scrollWidth;
 }
 function runtwofunction() {
@@ -428,88 +444,72 @@ function runtwofunction() {
     gfg_Run();
 }
 function answer() {
-    document.getElementById("expression").value += temp;
+    document.getElementById("expression1").value += temp;
     expression2 += temp;
 }
 function pi() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('π');
-    dis3(Math.PI);
-
+    display2('π');
+    display3(Math.PI);
     check = 0;
 }
 function e() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('e');
-    dis3(Math.E);
+    display2('e');
+    display3(Math.E);
     check = 0;
 }
-function dis(val) {
-    var x = document.getElementById("expression").value;
-    var n = x.length - 1;
-    if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%") && (val == 0 || val == 1 || val == 2 || val == 3 || val == 4 || val == 5 || val == 6 || val == 7 || val == 8 || val == 9))) {
-        multiply();
-    }
-    if (check == 1 && val == ")") {
-        clr();
-    }
-    else {
-        dis2(val);
-        dis3(val);
-    }
-
-}
 function power() {
-    dis2('^');
-    dis3('**');
+    display2('^');
+    display3('**');
     check = 0;
 }
 function multiply() {
-    dis2('\u00D7');
-    dis3('*');
+    display2('\u00D7');
+    display3('*');
     check = 0;
 }
 function square() {
-    dis2('\u00B2');
-    dis3('**2');
+    display2('\u00B2');
+    display3('**2');
     check = 0;
 }
 function squareroot() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('√(');
-    dis3('√(');
+    display2('√(');
+    display3('√(');
     check = 0;
 }
 function factorial() {
-    dis2('!');
-    dis3('!');
+    display2('!');
+    display3('!');
     check = 0;
 }
 function percentage() {
-    dis2('%');
-    dis3('/100');
+    display2('%');
+    display3('/100');
     check = 0;
 }
 function sinfn() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('sin(');
-    dis3('sss(');
+    display2('sin(');
+    display3('sss(');
     check = 0;
     var h = document.getElementById("history");
     var m = h.value.indexOf('Enter');
@@ -517,16 +517,15 @@ function sinfn() {
         h.value += "\n" + "Enter angle in degree.";
         gfg_Run();
     }
-
 }
 function cosfn() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('cos(');
-    dis3('ccc(');////intentionally written ccc so to avoid letter s which is present in sin as well.
+    display2('cos(');
+    display3('ccc(');////intentionally written ccc so to avoid letter s which is present in sin as well.
     check = 0;
     var h = document.getElementById("history");
     var m = h.value.indexOf('Enter');
@@ -536,13 +535,13 @@ function cosfn() {
     }
 }
 function tanfn() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('tan(');
-    dis3('ttt(');
+    display2('tan(');
+    display3('ttt(');
     check = 0;
     var h = document.getElementById("history");
     var m = h.value.indexOf('Enter');
@@ -552,37 +551,37 @@ function tanfn() {
     }
 }
 function logfn() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('log(');
-    dis3('lll(');
+    display2('log(');
+    display3('lll(');
     check = 0;
 }
 function lnfn() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('ln(');
-    dis3('jj(');////intentionally written jj so to avoid letter l which is present in log as well.
+    display2('ln(');
+    display3('jj(');////intentionally written jj so to avoid letter l which is present in log as well.
     check = 0;
 }
 function abs() {
-    var x = document.getElementById("expression").value;
+    var x = document.getElementById("expression1").value;
     var n = x.length - 1;
     if (check == 0 && ((x[n] == ")" || x[n] == "!" || x[n] == "π" || x[n] == "e" || x[n] == "\u00B2" || x[n] == "%" || x[n] == 0 || x[n] == 1 || x[n] == 2 || x[n] == 3 || x[n] == 4 || x[n] == 5 || x[n] == 6 || x[n] == 7 || x[n] == 8 || x[n] == 9))) {
         multiply();
     }
-    dis2('abs(');
-    dis3('aaa(');
+    display2('abs(');
+    display3('aaa(');
     check = 0;
 }
 function exp() {
-    dis2('\u00D710^');
-    dis3('*10**');
+    display2('\u00D710^');
+    display3('*10**');
     check = 0;
 }
