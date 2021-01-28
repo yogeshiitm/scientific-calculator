@@ -1,0 +1,286 @@
+/* styles by yogesh agarwala https://yogeshiitm.github.io */
+
+.full-width {
+    width: 100%;
+}
+
+/* @media screen
+    and (max-width : 992px) {
+
+        body {
+            background-image: url('images/background.jpg');
+        }
+        
+    } */
+
+a {
+    color: #888;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.design {
+    max-width: 900px;
+    width: 100%;
+    ;
+    border: 1px groove #2184E7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-55 {
+    margin-bottom: 55px;
+}
+
+.p-10 {
+    padding: 10px !important;
+}
+
+.designx {
+    background: #FFF;
+    padding: 15px !important;
+}
+
+.design .row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.design .row div {
+    padding: 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.orblock span {
+    background: #999;
+    vertical-align: middle;
+    width: 40%;
+    height: 2px;
+    display: inline-block;
+}
+
+.social {
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    display: inline-block;
+    color: #FFF;
+    padding: 7px;
+}
+
+.social .fa {
+    font-size: 20px !important;
+}
+
+.facebook {
+    background: #3b5998;
+}
+
+.g-plug {
+    background: #EB4747;
+}
+
+.social .fa:hover, .social:hover {
+    color: #DDD;
+}
+
+.btn-design {
+    width: 100%;
+    border-radius: 20px;
+    background: #07294D;
+    color: #FFF;
+}
+
+.btn-design:hover {
+    background: #10569A;
+    color: #FFF;
+}
+
+.input-group {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #CCC;
+}
+
+.input-group .input-group-addon {
+    background: #FFF;
+    border: 0px;
+}
+
+.input-group .form-control {
+    border: 0px;
+}
+
+.input-group .form-control:focus {
+    box-shadow: none;
+}
+
+p {
+    color: #FFF;
+}
+
+@media only screen and (max-width: 767px) {
+    .no-small {
+        display: none;
+    }
+}
+
+.round {
+    border-radius: 4px;
+}
+
+.round2 {
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+input[type="button"] {
+    display: block;
+    background-color: #f1f3f4;
+    color: black;
+    border: none;
+    outline: none;
+    height: 40px;
+}
+
+.btn-color {
+    background: #dfe1e5 !important;
+}
+
+.btn-color-blue {
+    background: #2184E7 !important;
+    color: white !important;
+}
+
+.onhoverlight:hover {
+    background: #e8eaeb !important;
+}
+
+.onhoverdark:hover {
+    background: #d7d9dd !important;
+}
+
+.onhoverblue:hover {
+    background: #2184E7 !important;
+}
+
+.onhoverlightblue:hover {
+    background: #4d8bf1 !important;
+}
+
+.icon-color {
+    color: black !important;
+}
+
+.UpZIS- {
+    font-size: 13px;
+}
+
+.A2W7l {
+    font-size: 14px;
+}
+
+.mF5fo {
+    font-size: 18px;
+}
+
+.G7BHUb {
+    font-weight: bold
+}
+
+.dDoNo {
+    font-size: xx-large !important
+}
+
+.adiow {
+    font-size: 20px;
+}
+
+input[type="text"] {
+    display: block;
+    background-color: #f1f3f4;
+    color: black;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+#content-desktop {
+    display: block;
+}
+
+#content-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #content-desktop {
+        display: none;
+    }
+    #content-mobile {
+        display: block;
+    }
+}
+
+.hrefWithoutDecoration {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.hrefWithoutDecoration2 {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.newblue{
+    background-color: #0A66C2;
+}
+
+.newblue:hover{
+    background-color: #004182;
+}
