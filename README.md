@@ -19,4 +19,6 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
     3!5 → 3! × 5
     ```
     
-**Note:** Currently I have uploaded the minified version of the code, I will upload the clean version soon.
+**Note:** 
+1. Currently I have uploaded the minified version of the code, I will upload the clean version soon.
+2. Contact me [here](https://yogeshiitm.github.io/about), if you think there is a bug in my app.
