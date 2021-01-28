@@ -1,6 +1,5 @@
 // Code written by yogesh agarwala https://yogeshiitm.github.io
 
-
 var expression2 = "";
 
 function display1(val) {
