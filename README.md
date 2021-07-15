@@ -25,12 +25,12 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
     abs(-5)) ---> Error displayed: closing bracket has been used before an opening bracket.
     (abs(-5) ---> Error displayed: brackets are not balanced.
     ```
-    
+
+5. The calculator can take input not only through mouse clicks but also from keyboard button press.
 
 ## Near future plan
-1. Input through keyboard: currently the calculator only supports click on the button through mouse (in desktop)
-2. Switching between degree and radian: currently by default angle has to be entered in degree.
-3. Inverse trigonometric functions are yet to be added.
+1. Switching between degree and radian: currently by default angle has to be entered in degree.
+2. Inverse trigonometric functions are yet to be added.
 
     
 **Note:** 

@@ -340,29 +340,12 @@ function solve() {
             }
         }
     }
-
-    // if (x.indexOf('√') < 0 && x.indexOf('s') < 0 && x.indexOf('c') < 0 && x.indexOf('t') < 0 && x.indexOf('l') < 0 && x.indexOf('a') < 0 && x.lastIndexOf(')') < x.lastIndexOf('(')) {
-    //     expression2 = "Error";
-    //     var history = document.getElementById("history");
-    //     history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
-    //     document.getElementById("expression1").value = "Error";
-    //     gfg_Run();
-    // }
-
-
+    
 
     if (expression2 != Infinity) {
         try {
             var y = eval(expression2);
         } catch (err) {
-            //check if all paranthesis are closed properly
-            // if( ! checkBalancedParentheses(expression2)){
-            //     expression2 = "Error";
-            //     var history = document.getElementById("history");
-            //     history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
-            //     document.getElementById("expression1").value = "Error";
-            //     gfg_Run();
-            // }
             let temp = checkBalancedParentheses(expression2);
             if(temp===0){
                 expression2 = "Error";
@@ -637,4 +620,80 @@ function exp() {
     display2('\u00D710^');
     display3('*10**');
     check = 0;
+}
+
+
+
+//keypress input
+document.addEventListener('keydown',keyPressed);
+
+function keyPressed(e){
+    //Conditional Statments
+    if(e.key=="1"){
+        display1(1);
+    }else if(e.key=="2"){
+        display1(2);
+    }else if(e.key=="3"){
+        display1(3);
+    }else if(e.key=="4"){
+        display1(4);
+    }else if(e.key=="5"){
+        display1(5);
+    }else if(e.key=="6"){
+        display1(6);
+    }else if(e.key=="7"){
+        display1(7);
+    }else if(e.key=="8"){
+        display1(8);
+    }else if(e.key=="9"){
+        display1(9);
+    }else if(e.key=="0"){
+        display1(0);
+    }
+    
+    else if(e.key=="."){
+        display1('.');
+    }else if(e.key=="("){
+        display1('(');
+    }else if(e.key==")"){
+        display1(')');
+    }
+
+
+    else if(e.key=="/"){
+        display1('/');
+    }else if(e.key=="*"){
+        multiply();
+    }else if(e.key=="+"){
+        display1('+');
+    }else if(e.key=="-"){
+        display1('-');
+    }else if(e.key=="=" || e.key=="Enter"){
+        runtwofunction();
+    }else if(e.key=="Delete" || e.key=="Backspace"){
+        back();
+    }
+    
+    else if(e.key=="s" || e.key=="S"){
+        sinfn();
+    }else if(e.key=="c" || e.key=="C"){
+        cosfn();
+    }else if(e.key=="t" || e.key=="T"){
+        tanfn();
+    }else if(e.key=="p"){
+        pi();
+    }else if(e.key=="!"){
+        factorial();
+    }else if(e.key=="^"){
+        power();
+    }else if(e.key=="%"){
+        percentage();
+    }
+
+    // else if(e.key=="ArrowDown" || e.key=="ArrowUp"){
+    //     answer();
+    // }
+
+
+    console.log(snake.direction);
 }
