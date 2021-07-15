@@ -19,6 +19,8 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
     4^(3πe) ---> 4^(3×π×e)
     3!5 ---> 3! × 5
     ```
+
+4. It also checks if all the parentheses are balanced in the input expression using Stack data structure, and then display the error accordingly.
     
 
 ## Near future plan

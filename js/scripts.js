@@ -327,7 +327,7 @@ function solve() {
 
                     var n = eval(expression2.substring(k + 4, i));
                     var ans = Math.abs(n);
-                    expression2 = expression2.substring(0, k) + String(ans) + expression2.substring(i + 3, expression2.length);
+                    expression2 = expression2.substring(0, k) + String(ans) + expression2.substring(i + 1, expression2.length);
 
                 }
                 else {
@@ -341,23 +341,50 @@ function solve() {
         }
     }
 
-    if (x.indexOf('√') < 0 && x.indexOf('s') < 0 && x.indexOf('c') < 0 && x.indexOf('t') < 0 && x.indexOf('l') < 0 && x.indexOf('a') < 0 && x.lastIndexOf(')') < x.lastIndexOf('(')) {
-        expression2 = "Error";
-        var history = document.getElementById("history");
-        history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
-        document.getElementById("expression1").value = "Error";
-        gfg_Run();
-    }
+    // if (x.indexOf('√') < 0 && x.indexOf('s') < 0 && x.indexOf('c') < 0 && x.indexOf('t') < 0 && x.indexOf('l') < 0 && x.indexOf('a') < 0 && x.lastIndexOf(')') < x.lastIndexOf('(')) {
+    //     expression2 = "Error";
+    //     var history = document.getElementById("history");
+    //     history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
+    //     document.getElementById("expression1").value = "Error";
+    //     gfg_Run();
+    // }
+
+
 
     if (expression2 != Infinity) {
         try {
             var y = eval(expression2);
         } catch (err) {
-            document.getElementById("expression1").value = "Error";
-            expression2 = "Error";
-            var history = document.getElementById("history");
-            history.value += "\n" + x + " = " + expression2;
-            gfg_Run();
+            //check if all paranthesis are closed properly
+            // if( ! checkBalancedParentheses(expression2)){
+            //     expression2 = "Error";
+            //     var history = document.getElementById("history");
+            //     history.value += "\n" + x + " = " + expression2 + "\n" + "Please close the parenthesis.";
+            //     document.getElementById("expression1").value = "Error";
+            //     gfg_Run();
+            // }
+            let temp = checkBalancedParentheses(expression2);
+            if(temp===0){
+                expression2 = "Error";
+                var history = document.getElementById("history");
+                history.value += "\n" + x + " = " + expression2 + "\n" + "Error: closing bracket has been used before an opening bracket.";
+                document.getElementById("expression1").value = "Error";
+                gfg_Run();
+            }
+            else if(temp===1){
+                expression2 = "Error";
+                var history = document.getElementById("history");
+                history.value += "\n" + x + " = " + expression2 + "\n" + "Error: brackets are not balanced.";
+                document.getElementById("expression1").value = "Error";
+                gfg_Run();
+            }
+            else{
+                document.getElementById("expression1").value = "Error";
+                expression2 = "Error";
+                var history = document.getElementById("history");
+                history.value += "\n" + x + " = " + expression2;
+                gfg_Run();
+            }
         }
 
         var z = y.toFixed(10);
@@ -376,6 +403,33 @@ function solve() {
 var temp = '';
 var check = 0; //added to check if the back button is pressed after the solve button
 //bcz if solve is pressed after back then the entire expression2 should get deleted
+
+
+//checking + balancing
+function checkBalancedParentheses(str) {
+    let stack = [];
+    let map = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
+    }
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '(' || str[i] === '{' || str[i] === '[' ) {
+            stack.push(str[i]);
+        }
+        else if(str[i] === ')' || str[i] === '}' || str[i] === ']' ) {
+            let last = stack.pop();
+
+            if (str[i] !== map[last]) {return 0};
+        }
+    }
+    
+    if (stack.length !== 0) {return 1};
+    return 2;
+}
+
+
 function back() {
     var v = document.getElementById("expression1").value;
     var m = expression2[expression2.length - 2];
