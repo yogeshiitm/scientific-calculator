@@ -29,7 +29,7 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
 5. The calculator can take input not only through mouse clicks but also from keyboard button press.
 
 ## Near future plan
-1. Switching between degree and radian: currently by default angle has to be entered in degree.
+1. Option to switch between degree and radian: currently by default angle has to be entered in degree.
 2. Inverse trigonometric functions are yet to be added.
 
     
