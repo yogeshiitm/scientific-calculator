@@ -34,4 +34,4 @@ This is an online javascript scientific calculator, designed and coded by [Yoges
 
     
 **Note:** 
-If you think there is a mistake in the calculation done by the app or find any other bug, please do [let me know](https://yogeshiitm.github.io/about).
+I have tried to ensure that there is no mistake in the calculations done by the app but still if you find one, please do [let me know](https://yogeshiitm.github.io/about).
