@@ -694,6 +694,4 @@ function keyPressed(e){
     //     answer();
     // }
 
-
-    console.log(snake.direction);
 }
